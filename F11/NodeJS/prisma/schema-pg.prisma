@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuarios {
+id Int @id @default(autoincrement())
+nombres String
+apellidos String
+correo String @unique
+clave String
+role String
+fechaCreacion DateTime @default(now())
+fechaActualizacion DateTime @default(now())
+}
+
+model Clientes {
+id Int @id @default(autoincrement())
+tipoDocumento String 
+noDocumento String @unique
+edad Int
+nombres String
+apellidos String
+correo String @unique
+telefono String
+direccion String
+ciudad String
+notas String
+pedidos Pedidos[]
+fechaCreacion DateTime @default(now())
+fechaActualizacion DateTime @default(now())
+}
+
+model Productos {
+id Int @id @default(autoincrement())
+nombre String
+precio Decimal
+imagen String @default("https://via.placeholder.com/300")
+descripcion String
+pedidosItems PedidosItems[]
+fechaCreacion DateTime @default(now())
+fechaActualizacion DateTime @default(now())
+}
+
+model Categorias {
+id Int @id @default(autoincrement())
+nombre String
+fechaCreacion DateTime @default(now())
+fechaActualizacion DateTime @default(now())
+}
+
+model Pedidos {
+id Int @id @default(autoincrement())
+cliente Clientes @relation(fields: [clienteId], references: [id])
+clienteId Int
+subtotal Decimal
+total Decimal
+fechaCreacion DateTime @default(now())
+fechaActualizacion DateTime @default(now())
+}
+
+model PedidosItems {
+id Int @id @default(autoincrement())
+producto Productos @relation(fields: [productoId], references: [id])
+productoId Int
+cantidad Int
+subtotal Decimal
+fechaCreacion DateTime @default(now())
+fechaActualizacion DateTime @default(now())
+}

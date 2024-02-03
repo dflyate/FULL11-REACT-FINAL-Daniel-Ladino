@@ -1,0 +1,2 @@
+npm install react-icons //para uso de iconos
+npm install date-fns //formateo de fechas
