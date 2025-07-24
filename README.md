@@ -23,7 +23,7 @@ Aplicación web full stack para gestionar productos, clientes y pedidos. Permite
 ---
 
 
-## 📸 Capturas de pantalla (opcional)
+## 📸 Capturas de pantalla
 
 <img width="1920" height="435" alt="image" src="https://github.com/user-attachments/assets/ae7308f0-dfde-43f3-86e1-b04837ea95b9" />
 
