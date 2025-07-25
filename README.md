@@ -118,6 +118,55 @@ npx prisma generate
 npm start
 ```
 
+
+### PARA EL BACKEND CON POSTGRESQL (SEGUNDA OPCIÓN)
+
+- Ingresar a la carpeta `NodeJS_PostgreSQL`
+- Abrir otra consola de comandos y ejecutar:
+
+```bash
+npm install
+```
+
+### BASE DE DATOS POSTGRESQL
+
+- Ingresar a pgAdmin4
+- En la opción de servers, seleccionar el servidor de PostgreSQL creado durante la instalacion (con usuario y contraseña solicitados)
+- Clic derecho sobre la opción Databases para crear una base de datos
+- Desplegar las opciones de la base de datos, sobre el menú Schemas es posible visualizar las tablas que irá creando la aplicación
+
+  
+### BACKEND CON POSTGRESQL (CONTINUACIÓN)
+
+- En la raíz del proyecto (`NodeJS`), crear el archivo `.env`
+- Añadir la variable de entorno:
+
+```env
+DATABASE_URL="postgresql://<usuario>:<contraseña>@<host>:<puerto>/<nombre_base_de_datos>?schema=<esquema>"
+```
+
+- Verificar que en la carpeta `prisma` exista el archivo `schema.prisma` y que el atributo `provider` sea `mongodb`
+
+```prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+
+- Ejecutar el comando para crear el cliente de prisma:
+
+```bash
+npx prisma generate
+```
+
+- Ejecutar el backend:
+
+```bash
+npm start
+```
+
+
 ### PROBANDO LA APLICACIÓN
 
 - Abrir Postman y crear una nueva petición
