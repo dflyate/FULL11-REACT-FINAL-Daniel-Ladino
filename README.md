@@ -6,9 +6,9 @@ Aplicación web full stack para gestionar productos, clientes y pedidos. Permite
 
 ## Tecnologías utilizadas
 
-- **Frontend:** React, Vite, Bootstrap
-- **Backend:** Node.js, Express, Prisma ORM
-- **Base de datos:** MongoDB (MongoDB Atlas)
+- **Frontend:** React 18.2.0, Vite 5.0.8, Bootstrap 5.3.2, redux-toolkit 2.0.1
+- **Backend:** Node.js 21.7.3, Express 4.18.2, Prisma 5.7.0, jsonwebtoken 9.0.2
+- **Base de datos:** MongoDB (MongoDB Atlas), MongoDB Compass 1.39.0, PostgreSQL 15.13
 
 ---
 
