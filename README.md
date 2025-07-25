@@ -65,9 +65,9 @@ npm run dev
 
 - Abrir la ruta generada desde un navegador: `http://localhost:5173/`
 
-### PARA EL BACKEND
+### PARA EL BACKEND CON MONGO (PRIMERA OPCIÓN)
 
-- Ingresar a la carpeta `NodeJS`
+- Ingresar a la carpeta `NodeJS_Mongo`
 - Abrir otra consola de comandos y ejecutar:
 
 ```bash
@@ -88,7 +88,7 @@ npm install
   - Ir a Clusters → Connect → Connect your application
   - Copiar la cadena SRV proporcionada
 
-### BACKEND (CONTINUACIÓN)
+### BACKEND CON MONGO (CONTINUACIÓN)
 
 - En la raíz del proyecto (`NodeJS`), crear el archivo `.env`
 - Añadir la variable de entorno:
@@ -104,6 +104,12 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+```
+
+- Ejecutar el comando para crear el cliente de prisma:
+
+```bash
+npx prisma generate
 ```
 
 - Ejecutar el backend:
